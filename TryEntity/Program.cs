@@ -10,6 +10,7 @@ namespace TryEntity
     {
         static void Main(string[] args)
         {
+            DataService.Load();
             Console.WriteLine("Hit ENTER to continue");
             Console.ReadLine();
         }
