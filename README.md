@@ -9,8 +9,10 @@ Install Visual Studio 2012
 Install MySQL and MySQL Visual Studio Integration
 
 Install NuGet packages:
-    - Entity Framework
-    - MySQL.Data.Entity
+
+- Entity Framework
+- MySQL.Data.Entity
+
 
 ## Using Entity Framework
 
