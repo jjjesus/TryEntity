@@ -15,7 +15,8 @@ namespace TryEntity
     public partial class meal
     {
         public int id { get; set; }
-        public string course { get; set; }
         public string item { get; set; }
+        public string meal_name { get; set; }
+        public string course_name { get; set; }
     }
 }

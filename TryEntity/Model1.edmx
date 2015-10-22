@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="try_entityModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="try_entityModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="try_entityModelStoreContainer">
           <EntitySet Name="meal" EntityType="try_entityModel.Store.meal" store:Type="Tables" Schema="try_entity" />
         </EntityContainer>
@@ -13,11 +13,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="course" Type="varchar" MaxLength="45" />
+          <Property Name="meal_name" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="course_name" Type="varchar" MaxLength="45" />
           <Property Name="item" Type="varchar" MaxLength="45" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="try_entityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -29,8 +29,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="course" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="item" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="meal_name" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="course_name" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -41,8 +42,9 @@
           <EntitySetMapping Name="meals">
             <EntityTypeMapping TypeName="try_entityModel.meal">
               <MappingFragment StoreEntitySet="meal">
+                <ScalarProperty Name="course_name" ColumnName="course_name" />
+                <ScalarProperty Name="meal_name" ColumnName="meal_name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="course" ColumnName="course" />
                 <ScalarProperty Name="item" ColumnName="item" />
               </MappingFragment>
             </EntityTypeMapping>
